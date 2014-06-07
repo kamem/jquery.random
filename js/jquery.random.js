@@ -8,17 +8,18 @@
  *	
  *	Date: 2014.06.07
  *
- * いい感じにランダム配置してくれる
+ * 一つの画像などをランダムの配置・大きさ・なるべく重ならないように領域を指定して生成する。
  *	
  *	@class random
  */
 
 (function($,global){
 
-$.fn.random = function (options) {
+$.fn.random = function (content,options) {
 	var $content = this;
 
 	var c = $.extend({
+		tagName: 'p',
 		className: 'randomContent',
 		content: '',
 		num: 30,
@@ -32,8 +33,8 @@ $.fn.random = function (options) {
 		adjustment: 0
 	},options),
 	
+	tagName = c.tagName,
 	className = c.className,
-	content = c.content,
 	num = c.num,
 	width = c.width,
 	height = c.height,
@@ -42,6 +43,7 @@ $.fn.random = function (options) {
 	min = c.min,
 	adjustment = c.adjustment,
 	
+	isSize = c.isSize,
 	isRatio = width === height ? true : false,
 	tryCount = c.tryCount,
 	
@@ -49,7 +51,7 @@ $.fn.random = function (options) {
 
 	//ランダムオブジェクトを生成
 	for(var i = 0;i < num;i++) {
-		$content.append('<p class="' + className + i + '">' + content +  '</p>');
+		$content.append('<' + tagName + ' class="' + className + i + '">' + content +  '</' + tagName + '>');
 		randomTry(i,tryCount);
 		
 		$('.' + className + i).css(info[i]);
@@ -72,8 +74,8 @@ $.fn.random = function (options) {
 		info[num] = {
 			left: random.left,
 			top: random.top,
-			width: random.width,
-			height: (isRatio ? random.width : random.height)
+			width: isSize ? random.width : width,
+			height: isSize ? (isRatio ? random.width : random.height) : height
 		};
 	};
 	

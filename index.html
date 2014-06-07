@@ -14,7 +14,7 @@
 
 <script>
 $(function(){
-	$('body').random('');
+	$('body').random('<img src="img/img.png">');
 });
 </script>
 
@@ -27,15 +27,22 @@ html,
 body {
 	height: 100%;
 	width: 100%;
+	background: -webkit-linear-gradient(#79e6f7 0%, #e9deb9 100%)
 }
 
 [class*=randomContent] {
-	background: rgba(100,100,30,0.3);
+	background: rgba(255,255,255,0.2);
 	width: 100px;
 	height: 100px;
 	position: absolute;
 	border-radius: 100px;
 }
+
+[class*=randomContent] img {
+	width: 100%;
+	height: auto;
+}
+
 </style>
 </head>
 
