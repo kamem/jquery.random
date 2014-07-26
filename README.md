@@ -3,7 +3,7 @@ jquery.random
 
 Placing a random one image, so as not to overlap as much as possible.
 
-* 日本語 : [タグをランダム配置＆サイズにしてなるべく重ならないように配置するjQueryプラグイン][http://develo.org/jquery.random]
+* 日本語 : [タグをランダム配置＆サイズにしてなるべく重ならないように配置するjQueryプラグイン](http://develo.org/jquery.random)
 
 Specification
 ---
