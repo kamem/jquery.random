@@ -1,17 +1,20 @@
 jquery.random
 =============
 
-一つの画像などをランダムの配置・大きさ・なるべく重ならないように領域を指定して生成する。
+Placing a random one image, so as not to overlap as much as possible.
 
+* 日本語 : [タグをランダム配置＆サイズにしてなるべく重ならないように配置するjQueryプラグイン][http://develo.org/jquery.random]
 
-仕様
+Specification
 ---
-1. 生成したい親要素をしていbodyの下に生成したい場合$('body')（※ appendされます。）
-2. 画像を中身に入れたい場合は画像を指定（必要がない場合は空）
-3. 生成したオブジェクトが重なっている場合は指定の数分ランダムをやり直す。
+1. Specifies the parent element you want to generate.
+if "$ ('body')" to be generated under the body.
+2. Specifies the image if you want to put in the image contents.
+Empty if there is no need.
+3. To redo the placement If the tag is overlap.
 
 
-使い方
+Usage
 ---
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/jquery.random.js"></script>
@@ -23,10 +26,10 @@ jquery.random
 
 
 
-オプション
+Options
 ------
 
-### 初期設定 ###
+### initialization ###
 	tagName: 'p',
 	className: 'randomContent',
 	content: '',
@@ -40,15 +43,15 @@ jquery.random
 	tryCount: 10,
 	adjustment: 0
 
-* tagName {String} 生成したいタグの名前
-* className {String} タグに付けるクラス名（randomContent + 連番）
-* content {String} タグの中身（画像など入れ込みたい場合など）
-* num {Number} 生成したいタグの個数
-* stageWidth {Number} 領域の横幅
-* stageHeight {Number} 領域の縦幅
-* width {Number} 画像の横幅最大値 （widthとheightが同じ値の場合縦横比を保ってランダムにします。）
-* height {Number}	画像の縦幅最大値
-* min {Number} 画像の最小値
-* isSize {Boolean} サイズをランダムにするか
-* tryCount {Number} 配置が重なっていた時に再度ランダムをやり直す回数
-* adjustment {Number} 重なり具合をどのぐらい許容するか
+* tagName {String} The name of the tag that you want to produce.
+* className {String} Class name for the tag. ex) randomContent + num.
+* content {String} The contents of the tag.If you want to put image.
+* num {Number} The number of tags you want to generate.
+* stageWidth {Number} The width of the area.
+* stageHeight {Number} Vertical width of the area.
+* width {Number} Width maximum value of the image.width and height is the case of the same value. You randomly while maintaining the aspect ratio.
+* height {Number}	Height maximum value of the image
+* min {Number} The minimum value of the image
+* isSize {Boolean} Whether or not to random size
+* tryCount {Number} The number of times to repeat the random again when the arrangement was overlapped.
+* adjustment {Number} Whether or not to allow how much the degree of overlap.
