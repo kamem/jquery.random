@@ -116,10 +116,10 @@ $.fn.random = function (content,options) {
 
 		for(var i = 0;i  < $('[class*=' + className + ']').size();i++) {
 			if(i !== num) {
-				var hani = ((info[i].top - info[num].height + adjustment) < info[num].top && info[num].top < (info[i].top + info[i].height - adjustment));
-				var hani2 = ((info[i].left - info[num].width + adjustment) < info[num].left && info[num].left < (info[i].left + info[i].width - adjustment));
+				var range = ((info[i].top - info[num].height + adjustment) < info[num].top && info[num].top < (info[i].top + info[i].height - adjustment)),
+					range2 = ((info[i].left - info[num].width + adjustment) < info[num].left && info[num].left < (info[i].left + info[i].width - adjustment));
 
-				isCheck = !(hani && hani2);
+				isCheck = !(range && range2);
 
 				if(!isCheck) break;
 			}
