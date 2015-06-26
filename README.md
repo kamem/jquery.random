@@ -21,7 +21,7 @@ Usage
 	<script type="text/javascript" src="js/jquery.random.js"></script>
 	<script type="text/javascript">
 		$(function(){
-			$('body').random('<img src="img/img.png">');
+			$('body').random(['<img src="img/img.png">','<img src="img/img2.png">']);
 		});
 	</script>
 

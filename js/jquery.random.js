@@ -51,7 +51,9 @@ $.fn.random = function (content,options) {
 
 	//Generate tags in random.
 	for(var i = 0;i < num;i++) {
-		$content.append('<' + tagName + ' class="' + className + i + '">' + content +  '</' + tagName + '>');
+		var contentRandomNum = Math.floor(Math.random() * content.length);
+
+		$content.append('<' + tagName + ' class="' + className + i + '">' + content[contentRandomNum] +  '</' + tagName + '>');
 		randomTry(i,tryCount);
 
 		$('.' + className + i).css(info[i]);
